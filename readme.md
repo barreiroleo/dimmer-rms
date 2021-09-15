@@ -1,7 +1,5 @@
 # Dimmer RMS
 
-[toc]
-
 ## Roadmap
 
 - [ ] Acondicionar señal.
