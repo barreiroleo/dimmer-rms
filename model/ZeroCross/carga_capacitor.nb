@@ -1,0 +1,461 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17885,        453]
+NotebookOptionsPosition[     16246,        416]
+NotebookOutlinePosition[     16776,        433]
+CellTagsIndexPosition[     16733,        430]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Curva de carga capacitor
+t = tiempo [s]
+r = resistencia [\[CapitalOmega]]
+c = capacitor [F]
+vf = tensi\[OAcute]n de fuente [V]\
+\>", "Subsection",
+ CellChangeTimes->{{3.84073215030396*^9, 3.8407321622253103`*^9}, {
+  3.840732215532042*^9, 
+  3.840732288044125*^9}},ExpressionUUID->"28a135e0-efb5-4e62-81ad-\
+984288eb4655"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"v", "[", 
+   RowBox[{"t_", ",", "r_", ",", "c_", ",", 
+    RowBox[{"vf_:", "1"}]}], "]"}], ":=", 
+  RowBox[{"vf", 
+   RowBox[{"(", 
+    RowBox[{"1", "-", 
+     SuperscriptBox["E", 
+      RowBox[{
+       RowBox[{"-", "t"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"r", "*", "c"}], ")"}]}]]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.8407277699014235`*^9, 3.8407278286461096`*^9}, {
+  3.8407280518360343`*^9, 3.840728079690589*^9}, {3.8407281183042903`*^9, 
+  3.8407282820520964`*^9}, {3.840728505854511*^9, 3.840728591407791*^9}, {
+  3.8407318191112227`*^9, 3.8407319778979783`*^9}, {3.8407320104712653`*^9, 
+  3.8407320579470673`*^9}, {3.840732125911027*^9, 3.8407321341563854`*^9}, {
+  3.8407321721341205`*^9, 3.840732173286536*^9}, {3.8407322227217526`*^9, 
+  3.8407322317635255`*^9}},
+ CellLabel->
+  "In[121]:=",ExpressionUUID->"0513c726-4e88-45a1-8e67-cda5d6ad16ef"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Aplicaci\[OAcute]n sobre circuito", "Subsection",
+ CellChangeTimes->{{3.84073218110301*^9, 
+  3.8407321890040956`*^9}},ExpressionUUID->"a6d01a4d-5471-4c29-aa54-\
+2ab61bb5761f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"res", "=", 
+   RowBox[{"220", " ", 
+    RowBox[{"10", "^", "3"}], " ", "2"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"cap", "=", 
+   RowBox[{"100", " ", 
+    RowBox[{"10", "^", 
+     RowBox[{"-", "6"}]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"vt", "[", "t_", "]"}], ":=", 
+  RowBox[{"v", "[", 
+   RowBox[{"t", ",", "res", ",", "cap"}], "]"}]}], "\n", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"vt", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"res", "*", "cap", "*", "5"}]}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8407321900230436`*^9, 3.840732190031041*^9}},
+ CellLabel->
+  "In[122]:=",ExpressionUUID->"a8851f85-0735-4992-95db-1cf8b3a65be6"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    TagBox[
+     {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+      1.], LineBox[CompressedData["
+1:eJwVyXs01HkYBvChHXVCy4a1Ll1sd90QzoTeV8yMQ+TS1IxbcpmYH8duKs0q
+rMpWq1Ikt2oLJc1sRCZHiUkkJ0UGbWXp4jJlvi6NRLG//eM5z/M5z+LQWN8I
+TQaD4Unn/9aRhVX0trdtoidZH56wKevM9u8cOWXAODKHG2UqgKcrMvyNOHXA
+UOSq2EZRQO0tOzqL0wrJDQMcno4YWLloOsnuBZSk75NMHINFa+YI1ewR6Dko
+K5a0ZkPmOKU9xtbARQmP31w/UgxeL827R9j6eCxUvXanSgaPilUdypnFaGxb
+qRZKG2GtLMmPWbMKUxmRn9MePoPqJ6sDzYqt0Fd1I+3CcgXESHkd1l52OLFo
+XNM/7gXI7TpzXxduxL77Xctm9F9DkdRg+VE+YI/jcuuFXj1wj1udYTbljLaF
+zWJudy+ITxpXoYUrDgts24+tewtfm/w2v43nYKbN7KUt4nfgE1A9/LTIDdN8
+jZx109/DQgvbF/JH7tgYt6CO90cfVPybtnSDiSem/zAuaBP3g8mo3nnishV9
+aso8VnIGoPAQq9KgxRtPGQvLTeYNwuf8sXsVn3zw7Z3obFnNIJT3uXSJZ/th
+1ii/ItNPCW2Wh5ckWm3D3674FMW+V4J/Hv/wNS4PO9LxnV/IB+BomRvo7duO
+bpw7k+KuD6D6U1k3lb8DcxLdH6Zv/ggzDl4pOmV8PGsaYv4l7yPE9f+1N/CV
+AAuymKHJYx/B+95xceuYP+oNf1I7Og3BoDQhr4kZiN9OzM2RJw5BX04gYawL
+wqkGt5JvNUOwpfQ5L8g1GFnMkvXm6iEwlLNUE7/sxK2bdu6Yt0oFnvHtrdpb
+QnDWZ4HvM74K6i06b0sVIbhN10+blayCIY9WayLahZ3qqrq2qypwP2HEchnf
+hc5XF9vwG1XA3N7zpCsxFA92lDyHdyrYc+nylO78MPzdPkiQwyBgMC29xbsQ
+htyqcwGHjAns/qdM08kmHMN9nEn3OgKkmfHK7n44sjPXzD/jQkDh3u6yxy0C
+e503dOvxCMRwL7l6vo7ABw6aX+2EBFiC2y0bI4U4YXpFu2QvAdmAfKRxWoha
+KQDNKQQymLyCrLO70c6wKY59mkCBvXV3vFkk6ly0T2zKIRDRr3VroiwST0uU
++w0LCQRIln2f5hSFd1+utJRLCJROP54MaYhCVJ8qiq8gUNkiTFL4i3CwNj5f
+6y6BkXLPk4HvRegdVfpzhJxA8PNRk8Z+EXbZ/7Q2mfbj0fPFVkoR/p5asDqP
+dqHVmwdaRIT1B6y0Wmnzb+6fLJ0Q4VyNekvHBwRqSi7tZupQmCLlsPXqCaRd
+HnH+25pCDVW44uZDAl9qs54a21J4RlcZ00Rb2OMQdNiewsE5NlNvaMPC1AN8
+R/p3X/LJsIHAaL7JTU0OhYxU3ZAE2oJsF7MdAgr51rjEtZFAg2zgel0AhR4L
+vLSDaFt3nrRfHUxhXHNM/z7aOkZdvhphFHKz1YnXaNdmRB+/EU3hxRaJ5dxH
+BNaU6/9oFEthblFLtQXt3LbKwuRfKdSOWOHsQDtOX6OWt5/CzcezLKNp96y/
+6ll7gMJnwRXpR2hv8fZ4uSqBQuG02Yd82lWxw5HnDlHoZKrYeJv2stPnxmeS
+KDwo7E16Qvs/9VdZEA==
+       "]]},
+     Annotation[#, "Charting`Private`Tag$227204#1"]& ]}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, 
+     Charting`ScaledFrameTicks[{Identity, Identity}]}, {Automatic, 
+     Charting`ScaledFrameTicks[{Identity, Identity}]}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 220}, {0., 0.9932620523133688}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.840732191295969*^9, 3.8407384963997216`*^9, 
+  3.840739585676567*^9},
+ CellLabel->
+  "Out[125]=",ExpressionUUID->"1de57fb3-1d82-4cd1-bc0d-5a52a67a1723"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Despeje tiempo de carga a tensi\[OAcute]n objetivo
+Tensi\[OAcute]n objetivo = 5v\
+\>", "Subsection",
+ CellChangeTimes->{{3.8407323081651144`*^9, 
+  3.8407323528801966`*^9}},ExpressionUUID->"85172845-6ae1-4075-9e50-\
+05b875851f42"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"t", "[", 
+   RowBox[{"v_", ",", "r_", ",", "c_", ",", 
+    RowBox[{"vf_:", "1"}]}], "]"}], ":=", 
+  RowBox[{"c", "*", "r", "*", 
+   RowBox[{"Log", "[", 
+    FractionBox["vf", 
+     RowBox[{"vf", "-", "v"}]], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8407320786608305`*^9, 3.8407320789628916`*^9}, {
+  3.8407323166971393`*^9, 3.8407323228570127`*^9}},
+ CellLabel->
+  "In[126]:=",ExpressionUUID->"eec7d7d9-ae1f-4b0e-b897-3c1857e44754"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"tsol", "=", 
+      RowBox[{"t", "[", 
+       RowBox[{"vo", ",", 
+        RowBox[{"r", " ", 
+         SuperscriptBox["10", "3"]}], ",", 
+        RowBox[{"c", " ", 
+         SuperscriptBox["10", 
+          RowBox[{"-", "6"}]]}], ",", "vf"}], "]"}]}], ",", 
+     RowBox[{"tmax", "=", 
+      RowBox[{
+       RowBox[{"t", "[", 
+        RowBox[{
+         RowBox[{"vf", "*", "0.99"}], ",", 
+         RowBox[{"r", " ", 
+          SuperscriptBox["10", "3"]}], ",", 
+         RowBox[{"c", " ", 
+          SuperscriptBox["10", 
+           RowBox[{"-", "6"}]]}], ",", "vf"}], "]"}], "*", "1.1"}]}]}], "}"}],
+    ",", "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"t", "[", 
+        RowBox[{"v", ",", 
+         RowBox[{"r", " ", 
+          SuperscriptBox["10", "3"]}], ",", 
+         RowBox[{"c", " ", 
+          SuperscriptBox["10", 
+           RowBox[{"-", "6"}]]}], ",", "vf"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"v", ",", "0", ",", "vf"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "tmax"}], "}"}], "}"}]}], ",", 
+       RowBox[{"Epilog", "\[Rule]", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "tsol"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"vo", ",", "tsol"}], "}"}]}], "}"}], "]"}], ",", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"vo", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"vo", ",", "tsol"}], "}"}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"N", "[", 
+             RowBox[{"tsol", ",", "2"}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"vo", "+", "0.5"}], ",", 
+              RowBox[{"tsol", "+", "0.5"}]}], "}"}]}], "]"}]}], "}"}]}]}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"vf", ",", "220", ",", "\"\<Tensi\[OAcute]n final [v]\>\""}], 
+        "}"}], ",", "0.1", ",", "220", ",", "1"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"vo", ",", "5", ",", "\"\<Tensi\[OAcute]n objetivo [v]\>\""}],
+         "}"}], ",", "0.1", ",", 
+       RowBox[{"vf", "*", "0.99"}], ",", 
+       RowBox[{"vf", "/", "100"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"r", ",", 
+         RowBox[{"res", " ", 
+          SuperscriptBox["10", 
+           RowBox[{"-", "3"}]]}], ",", 
+         "\"\<Resistencia [k\[CapitalOmega]]\>\""}], "}"}], ",", "1", ",", 
+       "1000", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"c", ",", 
+         RowBox[{"cap", " ", 
+          SuperscriptBox["10", "6"]}], ",", " ", 
+         "\"\<Capacitor [\[Mu]F]\>\""}], "}"}], ",", "1", ",", "1000", ",", 
+       "10"}], "}"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.8407355248721128`*^9, 3.8407356084601135`*^9}, {
+   3.8407357009302936`*^9, 3.840735707485701*^9}, 3.840735991037857*^9, {
+   3.840736023456583*^9, 3.84073602943025*^9}, {3.8407360730160956`*^9, 
+   3.8407361165968113`*^9}, {3.8407361581096067`*^9, 
+   3.8407361676677866`*^9}, {3.8407362027791862`*^9, 
+   3.8407362624009657`*^9}, {3.8407362983661113`*^9, 
+   3.8407364250281377`*^9}, {3.8407382424234257`*^9, 3.840738355518762*^9}, {
+   3.8407383868425636`*^9, 3.8407383964942265`*^9}, {3.840738431966505*^9, 
+   3.8407384649754477`*^9}, {3.8407385066320763`*^9, 3.840738620805888*^9}, {
+   3.840738693417881*^9, 3.8407387241150374`*^9}, {3.8407389428050947`*^9, 
+   3.84073894531422*^9}, {3.8407390186124697`*^9, 3.840739158715794*^9}, {
+   3.8407392239099026`*^9, 3.840739337028663*^9}, {3.840739492985876*^9, 
+   3.8407395268092885`*^9}},
+ CellLabel->
+  "In[127]:=",ExpressionUUID->"15e8bcbf-21c6-4de9-96f1-6e234643a3d8"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`c$$ = 100, $CellContext`r$$ = 
+    440, $CellContext`vf$$ = 220, CloudObject`Private`vo$$ = 5, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"sin t\[IAcute]tulo\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`vf$$], 220, "Tensi\[OAcute]n final [v]"}, 0.1, 220, 
+      1}, {{
+       Hold[CloudObject`Private`vo$$], 5, "Tensi\[OAcute]n objetivo [v]"}, 
+      0.1, 
+      Dynamic[$CellContext`vf$$ 0.99], 
+      Dynamic[$CellContext`vf$$/100]}, {{
+       Hold[$CellContext`r$$], 440, "Resistencia [k\[CapitalOmega]]"}, 1, 
+      1000, 10}, {{
+       Hold[$CellContext`c$$], 100, "Capacitor [\[Mu]F]"}, 1, 1000, 10}}, 
+    Typeset`size$$ = {360., {113., 117.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`vf$227234$$ = 0, CloudObject`Private`vo$227235$$ = 
+    0, $CellContext`r$227236$$ = 0, $CellContext`c$227237$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`c$$ = 100, $CellContext`r$$ = 
+        440, $CellContext`vf$$ = 220, CloudObject`Private`vo$$ = 5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`vf$$, $CellContext`vf$227234$$, 0], 
+        Hold[CloudObject`Private`vo$$, CloudObject`Private`vo$227235$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$227236$$, 0], 
+        Hold[$CellContext`c$$, $CellContext`c$227237$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        $CellContext`t[$CellContext`v, $CellContext`r$$ 
+         10^3, $CellContext`c$$ 10^(-6), $CellContext`vf$$], {$CellContext`v, 
+         0, $CellContext`vf$$}, 
+        PlotRange -> {{
+          0, 0.0050656872045869 $CellContext`c$$ $CellContext`r$$}}, Epilog -> {
+          
+          Line[{{0, Rational[1, 1000] $CellContext`c$$ $CellContext`r$$ 
+             Log[$CellContext`vf$$/($CellContext`vf$$ - 
+               CloudObject`Private`vo$$)]}, {
+            CloudObject`Private`vo$$, 
+             Rational[1, 1000] $CellContext`c$$ $CellContext`r$$ 
+             Log[$CellContext`vf$$/($CellContext`vf$$ - 
+               CloudObject`Private`vo$$)]}}], 
+          
+          Line[{{CloudObject`Private`vo$$, 0}, {
+            CloudObject`Private`vo$$, 
+             Rational[1, 1000] $CellContext`c$$ $CellContext`r$$ 
+             Log[$CellContext`vf$$/($CellContext`vf$$ - 
+               CloudObject`Private`vo$$)]}}], 
+          Text[
+           N[
+           Rational[1, 1000] $CellContext`c$$ $CellContext`r$$ 
+            Log[$CellContext`vf$$/($CellContext`vf$$ - 
+              CloudObject`Private`vo$$)], 2], {
+           CloudObject`Private`vo$$ + 0.5, 
+            Rational[1, 1000] $CellContext`c$$ $CellContext`r$$ 
+             Log[$CellContext`vf$$/($CellContext`vf$$ - 
+               CloudObject`Private`vo$$)] + 0.5}]}], 
+      "Specifications" :> {{{$CellContext`vf$$, 220, 
+          "Tensi\[OAcute]n final [v]"}, 0.1, 220, 1}, {{
+         CloudObject`Private`vo$$, 5, "Tensi\[OAcute]n objetivo [v]"}, 0.1, 
+         Dynamic[$CellContext`vf$$ 0.99], 
+         Dynamic[$CellContext`vf$$/100]}, {{$CellContext`r$$, 440, 
+          "Resistencia [k\[CapitalOmega]]"}, 1, 1000, 
+         10}, {{$CellContext`c$$, 100, "Capacitor [\[Mu]F]"}, 1, 1000, 10}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {201., 207.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.840739244218074*^9, 3.8407393374549265`*^9}, {
+   3.8407394981712685`*^9, 3.8407395475145063`*^9}, 3.8407395857577424`*^9},
+ CellLabel->
+  "Out[127]=",ExpressionUUID->"7bc1c85c-678f-4fc6-98a0-d68c132cbab2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"t", "[", 
+   RowBox[{"5", ",", "res", ",", "cap", ",", "220"}], "]"}], "//", 
+  "N"}]], "Input",
+ CellChangeTimes->{{3.8407320718461657`*^9, 3.840732108745633*^9}, 
+   3.840738478916397*^9},
+ CellLabel->
+  "In[128]:=",ExpressionUUID->"8c5bd9b2-90a2-4850-b8ae-193dd121be44"],
+
+Cell[BoxData["1.0115388018867464`"], "Output",
+ CellChangeTimes->{{3.8407321057328568`*^9, 3.8407321091024313`*^9}, 
+   3.8407321421577497`*^9, {3.840738496626911*^9, 3.840738501526948*^9}, 
+   3.8407395859003963`*^9},
+ CellLabel->
+  "Out[128]=",ExpressionUUID->"07022555-c231-4fcb-b907-639db50988ae"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{982, 674},
+WindowMargins->{{350, Automatic}, {49, Automatic}},
+SpellingDictionaries->{"CorrectWords"->{"capacitor", "vf"}},
+FrontEndVersion->"11.3 para Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "D:", "Program Files", 
+   "Mathematica 11.3"}, "NaturalColorMath10.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 332, 10, 104, "Subsection",ExpressionUUID->"28a135e0-efb5-4e62-81ad-984288eb4655"],
+Cell[915, 34, 911, 21, 44, "Input",ExpressionUUID->"0513c726-4e88-45a1-8e67-cda5d6ad16ef"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1863, 60, 182, 3, 36, "Subsection",ExpressionUUID->"a6d01a4d-5471-4c29-aa54-2ab61bb5761f"],
+Cell[CellGroupData[{
+Cell[2070, 67, 733, 22, 98, "Input",ExpressionUUID->"a8851f85-0735-4992-95db-1cf8b3a65be6"],
+Cell[2806, 91, 3234, 72, 247, "Output",ExpressionUUID->"1de57fb3-1d82-4cd1-bc0d-5a52a67a1723"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6089, 169, 240, 6, 53, "Subsection",ExpressionUUID->"85172845-6ae1-4075-9e50-05b875851f42"],
+Cell[6332, 177, 469, 12, 67, "Input",ExpressionUUID->"eec7d7d9-ae1f-4b0e-b897-3c1857e44754"],
+Cell[CellGroupData[{
+Cell[6826, 193, 4394, 112, 241, "Input",ExpressionUUID->"15e8bcbf-21c6-4de9-96f1-6e234643a3d8"],
+Cell[11223, 307, 4346, 85, 435, "Output",ExpressionUUID->"7bc1c85c-678f-4fc6-98a0-d68c132cbab2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15606, 397, 308, 8, 40, "Input",ExpressionUUID->"8c5bd9b2-90a2-4850-b8ae-193dd121be44"],
+Cell[15917, 407, 301, 5, 40, "Output",ExpressionUUID->"07022555-c231-4fcb-b907-639db50988ae"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
