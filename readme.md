@@ -32,18 +32,18 @@ Se comparan dos diseños:
 - ZCD adaptado. ZCD clásico con amplificador intermedio.
 
 <p align="center">
-<img src="./model/ZeroCross/Zero%20Cross.BMP" width="40%"/>
+<img src="./model/ZeroCross/Zero%20Cross.BMP" width="60%"/>
 </p>
 
 En el diseño adaptado, se han implementado algunas modificaciones.
-- Filtro pasa bajos. Compuesto por R5/C1 y R6/C1 según el semiciclo.
+- Filtro pasa bajos. Compuesto por R1/C1 y R2/C1 según el semiciclo.
   <!-- $$
   LPF = \frac{1}{(2\pi \cdot 220k\Omega \cdot 1nF)} \approx 720Hz
   $$ --> 
   <div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=LPF%20%3D%20%5Cfrac%7B1%7D%7B(2%5Cpi%20%5Ccdot%20220k%5COmega%20%5Ccdot%201nF)%7D%20%5Capprox%20720Hz"></div>
-- Fuente CC primitiva. Compuesta por D3, C3 y R7. El capacitor de esta fuente debe almacenar la suficiente energía para alimentar al optoacoplador durante la mayor parte del semiperíodo.\
-  Las resistencias R5 y R6 deberán tener el valor adecuado para garantizar la recarga de C3 en el tiempo que dure la detección de cruce.
-- Amplificador clase E. Permanente en estado alto salvo en los cruces por cruce de cero. En dicho cruce al abrirse Q2, dado el pull up, la salida optoacoplada tiene salida en alto.
+- Fuente CC primitiva. Compuesta por D1, C2 y R3. El capacitor de esta fuente debe almacenar la suficiente energía para alimentar al optoacoplador durante la mayor parte del semiperíodo.\
+  Las resistencias R1 y R2 deberán tener el valor adecuado para garantizar la recarga de C2 en el tiempo que dure la detección de cruce.
+- Amplificador clase E. Permanente en estado alto salvo en los cruces por cruce de cero. En dicho cruce al abrirse Q1, dado el pull up, la salida optoacoplada tiene salida en alto.
 
 Las oscilografías siguientes corresponden al detecctor clásico y al modificado respectivamente.
 
