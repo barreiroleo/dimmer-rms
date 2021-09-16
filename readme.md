@@ -1,5 +1,7 @@
 # Dimmer RMS
 
+**_Se recomienda abrir las imagenes en pestañas nuevas para su mejor visualización._**
+
 ## Roadmap
 
 - [ ] Acondicionar señal.
