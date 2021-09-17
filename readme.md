@@ -4,7 +4,7 @@
 
 ## Roadmap
 
-- [ ] Acondicionar señal.
+- [x] Acondicionar señal.
 - [ ] Manejar interrupción.
 - [ ] Implementar frecuencimetro.
 - [ ] Implementar método para obtener tiempo de trigger para objetivo duty.\
@@ -48,11 +48,10 @@ En el diseño adaptado, se han implementado algunas modificaciones.
 Las oscilografías siguientes corresponden al detecctor clásico y al modificado respectivamente.
 
 <p align="center">
-<img src="model/ZeroCross/1-ZCD Normal.png" alt="1-ZCD Normal.png" width="45%" />
-<img src="model/ZeroCross/2-ZCD Boost.png" alt="2-ZCD Boost" width="45%" />
-
-<img src="model/ZeroCross/3-ZCD Normal - Detail.png" alt="3-ZCD Normal - Detail" width="45%" />
-<img src="model/ZeroCross/4-ZCD Boost - Detail.png" alt="4-ZCD Boost - Detail" width="45%" />
+<img src="model/ZeroCross/1-ZCD Normal.png" alt="ZCD Normal.png" width="45%" />
+<img src="model/ZeroCross/2-ZCD Boost.png" alt="ZCD Boost" width="45%" />
+<img src="model/ZeroCross/3-ZCD Normal - Detail.png" alt="ZCD Normal" width="45%" />
+<img src="model/ZeroCross/4-ZCD Boost - Detail.png" alt="ZCD Boost" width="45%" />
 </p>
 
 - En el detector clásico, el umbral de detección se presenta 180us antes del cruce y perdura hasta casi 320us después del mismo.

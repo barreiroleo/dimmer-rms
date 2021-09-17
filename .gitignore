@@ -1,2 +1,6 @@
 z_web/
 z_ignore/
+
+# Proteus
+*.pdsprj*
+*.pdsbak
