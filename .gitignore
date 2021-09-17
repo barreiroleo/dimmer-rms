@@ -1,5 +1,6 @@
 z_web/
 z_ignore/
+output/
 
 # Proteus
 *.pdsprj*
