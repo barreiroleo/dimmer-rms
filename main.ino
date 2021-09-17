@@ -12,7 +12,7 @@
  *        XXX:   Cualquier anotación que no entre en las categorías anteriores.
  */
 
-
+// HACK: Desactiva optimizaciones de código para debug en proteus.
 #pragma GCC optimize ("-O0")
 #pragma GCC push_options
 
@@ -23,6 +23,7 @@
 
 void setup() {
     Serial.begin(9600);
+    init_freq_meter();
 }
 
 
