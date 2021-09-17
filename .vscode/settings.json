@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.gitignore": true,
+        "**/z_*": true,
+    },
+    "search.exclude": {
+        "**/tests": true
+    },
+}
