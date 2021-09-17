@@ -1,0 +1,174 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6075,        166]
+NotebookOptionsPosition[      5307,        144]
+NotebookOutlinePosition[      5860,        162]
+CellTagsIndexPosition[      5817,        159]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Par\[AAcute]metros:
+Frecuencia CPU = 16 MHz
+Resoluci\[OAcute]n TIMER 1 = 16 bits
+Prescaler = 64
+
+Frecuencia Ticks = Frecuencia CPU / Prescaler
+Per\[IAcute]odo Ticks  = Tiempo entre ticks
+Per\[IAcute]odo Overflow = Tiempo entre desbordes
+Ticks para tiempo dado = (Per\[IAcute]odo Overflow - TimeX) / Per\[IAcute]odo \
+Ticks\
+\>", "Subsection",
+ CellChangeTimes->{{3.8407570006752467`*^9, 3.840757137234935*^9}, {
+  3.8407572512779303`*^9, 3.840757333371681*^9}, {3.840757378495994*^9, 
+  3.840757460914892*^9}, {3.8407574961974974`*^9, 3.8407575470580673`*^9}, {
+  3.8407590443880634`*^9, 3.840759053347004*^9}, {3.840759094132284*^9, 
+  3.8407591796212196`*^9}},ExpressionUUID->"0f283ab8-6d96-4557-950b-\
+8d6337a8ebe1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"FCPU", "=", 
+     RowBox[{"16", " ", 
+      SuperscriptBox["10", "6"]}]}], ",", 
+    RowBox[{"Presc", "=", "8"}], ",", 
+    RowBox[{"ResBits", "=", "16"}]}], "}"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"FrecTick", "=", 
+   RowBox[{"FCPU", " ", "/", " ", "Presc"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PerTick", " ", "=", 
+   SuperscriptBox["FrecTick", 
+    RowBox[{"-", "1"}]]}], " ", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TimeOverflow", "=", 
+   RowBox[{
+    SuperscriptBox["2", "ResBits"], "*", "PerTick"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"TicksForX", "[", "time_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"TimeOverflow", "-", "time"}], ")"}], "/", "PerTick"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TimeX", "=", 
+   RowBox[{"10", " ", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "3"}]]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Frecuencia ticks\>\"", ",", "FrecTick", ",", "\"\<Hz\>\""}], "}"}],
+      ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Periodo ticks\>\"", ",", 
+       RowBox[{"PerTick", " ", 
+        SuperscriptBox["10", "6"]}], ",", "\"\<\[Mu]s\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Tiempo overflow\>\"", ",", 
+       RowBox[{"TimeOverflow", " ", 
+        SuperscriptBox["10", "3"]}], ",", "\"\<ms\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<tiempo X\>\"", ",", 
+       RowBox[{"TimeX", " ", 
+        SuperscriptBox["10", "3"]}], ",", "\"\<ms\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Ticks para tiempo X\>\"", ",", 
+       RowBox[{"TicksForX", "[", "TimeX", "]"}], ",", "\"\<raw\>\""}], 
+      "}"}]}], "}"}], "//", "N"}], "//", "TableForm"}]}], "Input",
+ CellChangeTimes->{{3.840758019824072*^9, 3.840758450504274*^9}, {
+  3.8407584867413797`*^9, 3.840759031472265*^9}, {3.840759232406417*^9, 
+  3.8407592367443852`*^9}, {3.8407593860369015`*^9, 3.8407593998121943`*^9}, {
+  3.8407635507423058`*^9, 3.840763556143024*^9}, {3.840815977439087*^9, 
+  3.8408159879688544`*^9}, {3.8408223576636047`*^9, 3.8408223773577228`*^9}},
+ CellLabel->"In[50]:=",ExpressionUUID->"c88c0923-09f7-4794-bf79-44b851c6d231"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Frecuencia ticks\"\>", "2.`*^6", "\<\"Hz\"\>"},
+    {"\<\"Periodo ticks\"\>", "0.5`", "\<\"\[Mu]s\"\>"},
+    {"\<\"Tiempo overflow\"\>", "32.768`", "\<\"ms\"\>"},
+    {"\<\"tiempo X\"\>", "10.`", "\<\"ms\"\>"},
+    {"\<\"Ticks para tiempo X\"\>", "45536.`", "\<\"raw\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.8407580606004267`*^9, 3.8407581052728896`*^9, {3.840758161796524*^9, 
+   3.8407581848438835`*^9}, {3.8407582367021027`*^9, 
+   3.8407582494561057`*^9}, {3.840758306740234*^9, 3.840758319805626*^9}, 
+   3.840758355247656*^9, {3.840758439081213*^9, 3.8407584510606728`*^9}, 
+   3.840758500579795*^9, 3.8407585498921566`*^9, {3.840758582093319*^9, 
+   3.840758597806059*^9}, {3.840758894126217*^9, 3.840758916534717*^9}, {
+   3.8407590099604273`*^9, 3.8407590318798227`*^9}, {3.840759240814253*^9, 
+   3.840759252205099*^9}, 3.8407594023120584`*^9, 3.8407635567358036`*^9, 
+   3.840815988734186*^9, 3.840821164296198*^9, {3.84082234549587*^9, 
+   3.8408223780077744`*^9}},
+ CellLabel->
+  "Out[56]//TableForm=",ExpressionUUID->"1e1f45a9-7cdd-40db-b8c9-\
+f3fc8f4f7182"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{783, 601},
+WindowMargins->{{59, Automatic}, {69, Automatic}},
+SpellingDictionaries->{"CorrectWords"->{
+ "capacitor", "TI", "Prescaler", "ticks"}},
+FrontEndVersion->"11.3 para Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "D:", "Program Files", 
+   "Mathematica 11.3"}, "NaturalColorMath10.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 729, 17, 172, "Subsection",ExpressionUUID->"0f283ab8-6d96-4557-950b-8d6337a8ebe1"],
+Cell[CellGroupData[{
+Cell[1334, 43, 2367, 62, 229, "Input",ExpressionUUID->"c88c0923-09f7-4794-bf79-44b851c6d231"],
+Cell[3704, 107, 1575, 33, 123, "Output",ExpressionUUID->"1e1f45a9-7cdd-40db-b8c9-f3fc8f4f7182"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
