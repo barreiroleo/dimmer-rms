@@ -26,7 +26,6 @@
 #define DebugSerial
 
 #include <Arduino.h>
-#include "src/Globals.h"
 #include "src/DebugSerial.h"
 
 #include "src/Timer1.h"
@@ -39,7 +38,7 @@ void setup() {
     init_INT();
 
     pinMode(13, OUTPUT);
-    set_timer_1(5E3);
+    set_timer_1(1E3);
 }
 
 
