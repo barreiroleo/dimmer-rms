@@ -10,12 +10,12 @@ using namespace std;
 
 
 int main(int argc, char const* argv[]) {
-    // float time_us = 10E3;
+    float time_us = 10E3;
     // cout << "Time us:                 " << time_us << endl;
     // cout << "Periodo de ticks:        " << ticks_periode << endl;
     // cout << "Ticks para tiempo X[us]: " << ticks_for_us(time_us) << endl; // 10 ms
 
-    uint16_t time_in_ticks  = (1 / peri_ticks);
+    uint16_t time_in_ticks  = (time_us / peri_ticks);
     uint16_t ticks_for_time = ticks_overflow - time_in_ticks;
 
     cout << ticks_for_time << endl;
