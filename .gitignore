@@ -3,5 +3,5 @@ z_ignore/
 output/
 
 # Proteus
-*.pdsprj*
+*.pdsprj.*
 *.pdsbak
