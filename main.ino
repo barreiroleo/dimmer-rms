@@ -19,11 +19,13 @@
 #include <Arduino.h>
 #include "src/Globals.h"
 #include "src/Interrupt.h"
+#include "src/Timer1.h"
 
 
 void setup() {
     Serial.begin(9600);
     init_freq_meter();
+    set_timer_1(10E3);
 }
 
 
