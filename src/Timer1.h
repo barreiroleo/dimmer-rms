@@ -2,53 +2,35 @@
 #define Timer1_h
 
 #include <Arduino.h>
-#define prescaler             8
-#define ticks_overflow        65536
-#define ticks_periode         ((float) prescaler / 16)
-#define ticks_for_us(time_us) ((float) ticks_overflow - \
-                               (time_us / ticks_periode))
+#include "DebugSerial.h"
+
+void init_TMR1();
+void set_timer_1(uint16_t);
 
 
 void init_TMR1() {
-    /**
-     * @brief
-     * Configuración de registros del Timer 1.
-     * Register Description en capitulo 16.11. Interrupt vectors en tabla 12-6
-     */
     noInterrupts();
+    // Timer Counter Control Register A:
+    // Normal port operation, OC1A/OC1B disconnected.
+    // Waveform Generation Mode: Normal. Overflow en 0xFFFF.
+    TCCR1A = 0;
 
-    // Timer Counter Control Register A.
-    // Compare output mode for Channel A and Channel B.
-    TCCR1A = 0b00000000;
+    // Timer Counter Control Register B: Prescaler 8
+    //          CS12 | CS11 | CS10  ||           CS12 | CS11 | CS10
+    // Stop      0   |  0   |  0    ||  clk/64    0   |  1   |  1  
+    // clk/1     0   |  0   |  1    ||  clk/256   1   |  0   |  0  
+    // clk/8 ->  0   |  1   |  0    ||  clk/1024  1   |  0   |  1  
+    TCCR1B &= ~((1 << CS12) | (1 << CS10));
+    TCCR1B |= (1 << CS11);
 
-    // Timer Counter Control Register B.
-    // Input capture Noise Canceler. Demora 4 ciclos la lectura.
-    // Prescaler clk / 8.
-    // Stop :    000;   clk/1:    001
-    // clk/8:    010;   clk/64:   011
-    // clk/256:  100;   clk/1024: 101
-    TCCR1B = 0b10000010;
+    // Interrupt Mask Register.
+    TIMSK1 |= (1 << OCIE1A) | (1 << TOIE1);
 
-    // Timer Counter Control Register C.
-    TCCR1C = 0b00000000;
-
-    // Timer Counter.
-    TCNT1 = 0;
-
-    // Output Compare Register 1 A
-    OCR1A = 0;
-    // Output Compare Register 1 B
-    OCR1B = 0;
-
-    // Input Capture Register 1
-    ICR1 = 0;
-
-    // Interrupt Mask Register
-    // Output Compare A Match Interrupt Enable
-    // Overflow Interrupt Enable
-    // TIMSK1 = 1 << OCIE1A | 1 << TOIE1;
-    TIMSK1 = 0b00000011;
-
+    // Timer Counter. Output Compare Register A y B.
+    TCNT1 = 0; OCR1A = 0; OCR1B = 0;
+    
+    // Timer Counter Int Flag Register. Clear register.
+    // TIFR1 = 0;
     interrupts();
 }
 
@@ -56,11 +38,14 @@ void init_TMR1() {
 ISR(TIMER1_COMPA_vect) {
     /**
      * @brief
-     * Interrupcion cuando se alcanza la carga de comparación OCR0A.
-     * Reiniciar timer. Disparar triac.
+     * Interrupcion por comparación Timer vs OCR0A.
+     * Disparar triac. Timer sigue corriendo hasta detectar nuevo cruce por cero
+     * o hasta desbordar.
      */
-    Serial.println("Time match");
-    TCNT1 = 0;
+    println_debug("TMR1 Time match");
+    digitalWrite(13, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(13, LOW);
 }
 
 
@@ -68,15 +53,20 @@ ISR(TIMER1_OVF_vect) {
     /**
      * @brief
      * Interrupcion cuando desborda el timer.
-     * Si el valor objetivo de RMS es distinto a cero dar mensaje de error.
+     * Si hay desborde es porque no hay detecciones nuevas de cruce por cero.
      */
-    Serial.println("Hey, overflow");
+    println_debug("TMR1 Overflow");
     TCNT1 = 0;
 }
 
 
-void set_timer_1(uint16_t time_us) {
-    OCR1A = (int)ticks_for_us(time_us);
-}
+#define frec_cpu_MHz 16
+#define prescaler 8
+#define peri_ticks ((float) 1 / ((frec_cpu_MHz) / (prescaler)))
 
+void set_timer_1(uint16_t time_us) {    
+    uint16_t time_in_ticks  = (uint16_t)time_us / peri_ticks;
+    println_debug("Ticks for time: " + String(time_in_ticks));
+    OCR1A = time_in_ticks;
+}
 #endif
