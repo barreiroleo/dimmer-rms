@@ -23,7 +23,7 @@
 // HACK: Desactiva optimizaciones de código para debug en proteus.
 #pragma GCC optimize ("-O0")
 #pragma GCC push_options
-#define DebugSerial
+// #define DebugSerial
 
 #include <Arduino.h>
 #include "src/DebugSerial.h"
