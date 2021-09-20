@@ -1,6 +1,7 @@
 #ifndef Interrupt_h
 #define Interrupt_h
 #include <Arduino.h>
+#include "DebugSerial.h"
 
 #define interruptPin 2
 

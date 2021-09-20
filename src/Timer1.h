@@ -28,7 +28,7 @@ void init_TMR1() {
 
     // Timer Counter. Output Compare Register A y B.
     TCNT1 = 0; OCR1A = 0; OCR1B = 0;
-    
+
     // Timer Counter Int Flag Register. Clear register.
     // TIFR1 = 0;
     interrupts();
@@ -41,8 +41,9 @@ ISR(TIMER1_COMPA_vect) {
      * Interrupcion por comparación Timer vs OCR0A.
      * Disparar triac. Timer sigue corriendo hasta detectar nuevo cruce por cero
      * o hasta desbordar.
-     */
-    println_debug("TMR1 Time match");
+    **/
+
+    // println_debug("TMR1 Time match");
     digitalWrite(13, HIGH);
     delayMicroseconds(10);
     digitalWrite(13, LOW);
@@ -54,8 +55,9 @@ ISR(TIMER1_OVF_vect) {
      * @brief
      * Interrupcion cuando desborda el timer.
      * Si hay desborde es porque no hay detecciones nuevas de cruce por cero.
-     */
-    println_debug("TMR1 Overflow");
+    **/
+
+    // println_debug("TMR1 Overflow");
     TCNT1 = 0;
 }
 
@@ -64,9 +66,21 @@ ISR(TIMER1_OVF_vect) {
 #define prescaler 8
 #define peri_ticks ((float) 1 / ((frec_cpu_MHz) / (prescaler)))
 
-void set_timer_1(uint16_t time_us) {    
+void set_timer_1(uint16_t time_us) {
     uint16_t time_in_ticks  = (uint16_t)time_us / peri_ticks;
-    println_debug("Ticks for time: " + String(time_in_ticks));
-    OCR1A = time_in_ticks;
+    Serial.print("; ticks: "); Serial.println(time_in_ticks);
+    // println_debug("Ticks for time: " + String(time_in_ticks));
+
+    /**
+     * Si OCR1A ~= 20 hay salida de onda completa.
+     * Se dan 30 ticks para mayor estabilidad. No hay diferencia apreciable
+     * en osciloscopio. //TODO Probar en producto final
+    **/
+    if (time_us == 0) {
+        OCR1A = 30;
+    }
+    else {
+        OCR1A = time_in_ticks;
+    }
 }
 #endif
