@@ -10,5 +10,7 @@ z_ignore/
 
 # AVR elf & hex
 output/*
-!output/*.hex
-!output/*.elf
+# !output/*.elf
+
+# Gif project
+*.stg

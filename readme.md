@@ -57,3 +57,25 @@ Las oscilografías siguientes corresponden al detecctor clásico y al modificado
 - En el detector clásico, el umbral de detección se presenta 180us antes del cruce y perdura hasta casi 320us después del mismo.
 - En el detector modificado, el umbral de detección se presenta 53us después del cruce.
 - Siendo lo importante el flanco ascendente de detección, se mejora el tiempo de detección en un 70.88%
+
+## RMS Implementation
+Para entender la implementación de una salida RMS, hay que comprender que iguales incrementos fraccionarios de tiempo para el disparo del triac no provocan un cambio proporcional en la potencia de salida.
+La relación de variación de valor RMS contra tiempo de interrupción presenta la siguiente forma:
+<p align="center">
+<img src="./model/Dimmer/Duty vs time.png" width="60%"/><br>
+Modelado con <a href="https://github.com/barreiroleo/dimmer-rms-calc/blob/master/rms_vs_tinterrupt.ipynb">Dimmer RMS Calc</a>
+</p>
+
+Con la misma herramienta auxiliar diseñada para obtener el modelo anterior, se obtiene una tabla con puntos de fracción de tiempo que deben aplicarse al semiperiodo de la onda para obtener una fracción RMS específica.
+
+Para esta aplicación la tabla de puntos generada contiene 256 elementos (8 bits).
+<p align="center">
+<img src="./model/Dimmer/Table output.png" width="60%"/><br>
+Archivo <a href="./vector_rms.txt">vector_output.txt</a>
+</p>
+
+Sobre la simulación se implementación un sweep sobre el vector_rms, pasado este sweep se han asignado dos entradas para modificar manualmente el valor de salida.
+<p align="center">
+<img src="./model/Dimmer/Dimmer.SVG" width="47%"/>
+<img src="./model/Dimmer/Dimmer.gif" width="45%"/><br>
+</p>
