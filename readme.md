@@ -32,7 +32,7 @@ Se comparan dos diseños:
 - ZCD adaptado. ZCD clásico con amplificador intermedio.
 
 <p align="center">
-<img src="./model/ZeroCross/Zero%20Cross.BMP" width="60%"/>
+<img src="./model/ZeroCross/Zero%20Cross.BMP" width="40%"/>
 </p>
 
 En el diseño adaptado, se han implementado algunas modificaciones.
@@ -62,7 +62,7 @@ Las oscilografías siguientes corresponden al detecctor clásico y al modificado
 Para entender la implementación de una salida RMS, hay que comprender que iguales incrementos fraccionarios de tiempo para el disparo del triac no provocan un cambio proporcional en la potencia de salida.
 La relación de variación de valor RMS contra tiempo de interrupción presenta la siguiente forma:
 <p align="center">
-<img src="./model/Dimmer/Duty vs time.png" width="60%"/><br>
+<img src="./model/Dimmer/Duty vs time.png" width="40%"/><br>
 Modelado con <a href="https://github.com/barreiroleo/dimmer-rms-calc/blob/master/rms_vs_tinterrupt.ipynb">Dimmer RMS Calc</a>
 </p>
 
@@ -70,7 +70,7 @@ Con la misma herramienta auxiliar diseñada para obtener el modelo anterior, se 
 
 Para esta aplicación la tabla de puntos generada contiene 256 elementos (8 bits).
 <p align="center">
-<img src="./model/Dimmer/Table output.png" width="60%"/><br>
+<img src="./model/Dimmer/Table output.png" width="40%"/><br>
 Archivo <a href="./vector_rms.txt">vector_output.txt</a>
 </p>
 
