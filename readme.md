@@ -5,9 +5,9 @@
 ## Roadmap
 
 - [x] Acondicionar señal.
-- [ ] Manejar interrupción.
+- [x] Manejar interrupción.
 - [ ] Implementar frecuencimetro.
-- [ ] Implementar método para obtener tiempo de trigger para objetivo duty.\
+- [x] Implementar método para obtener tiempo de trigger para objetivo duty.\
        Podría implementarse por busqueda en una tabla o por método numérico.
 - [ ] Implementar comunicación I2C con maestro.
 
