@@ -74,7 +74,12 @@ Para esta aplicación la tabla de puntos generada contiene 256 elementos (8 bits
 Archivo <a href="./vector_rms.txt">vector_output.txt</a>
 </p>
 
-Sobre la simulación se implementación un sweep sobre el vector_rms, pasado este sweep se han asignado dos entradas para modificar manualmente el valor de salida.
+El producto <!-- $semi\_periode [us] \cdot rms\_time = t [us]$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=semi%5C_periode%20%5Bus%5D%20%5Ccdot%20rms%5C_time%20%3D%20t%20%5Bus%5D"> es el tiempo que se aplica al registro de comparación **OCR1A**. Cuando el **Timer_1** alcance dicha cuenta se procede con el disparo del triac.
+
+Sobre la simulación se implementa un sweep de fracciones RMS, terminado el sweep se leen dos entradas para modificar manualmente el valor de salida. 
+
+Por motivos de rendimiento, se ha reemplazado la etapa de detección por cruce por un generador de pulsos seteado al doble de frecuencia del alternador.
+
 <p align="center">
 <img src="./model/Dimmer/Dimmer.SVG" width="47%"/>
 <img src="./model/Dimmer/Dimmer.gif" width="45%"/><br>
