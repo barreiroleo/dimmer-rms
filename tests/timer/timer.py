@@ -1,3 +1,15 @@
+# @file timer.cpp
+# @author Leonardo A. Barreiro (github.com/barreiroleo)
+# @version 0.1
+# @date 2021-09-18
+# @copyright Copyright (c) 2021
+# @tags: /BUG   Hay comportamientos inesperados.
+#        /HACK  Solución rápida, debe reescribirse en un futuro.
+#        /FIXME Necesita reparación, no funciona.
+#        /TODO  Item por implementar o tarea por hacer.
+#        /XXX   Cualquier anotación que no entre en las categorías anteriores.
+# @brief 
+
 import argparse
 
 

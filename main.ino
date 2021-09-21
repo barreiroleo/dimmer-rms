@@ -2,7 +2,7 @@
  * @file main.ino
  * @author Leonardo A. Barreiro (github.com/barreiroleo)
  * @version 0.1
- * @date 2021-09-16
+ * @date 2021-09-12
  * @copyright Copyright (c) 2021
  * @tags: BUG   Hay comportamientos inesperados.
  *        HACK  Solución rápida, debe reescribirse en un futuro.
