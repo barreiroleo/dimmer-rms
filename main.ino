@@ -29,6 +29,8 @@
 
 #include <Arduino.h>
 #include "src/DebugSerial.h"
+uint16_t semi_periode = 10E3;
+bool flag_print = 0;
 
 #include "src/Timer1.h"
 #include "src/Interrupt.h"
@@ -44,26 +46,32 @@ void setup() {
 
 
 #define LENGHT(x) ((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
+#define max_index 254
+#define min_index 2
 void loop() {
-    uint16_t lenght = LENGHT(vector_rms_time);
-    Serial.println(lenght);
-    for (uint16_t index = 0; index < lenght; index++) {
-        rms_time_calc(index);
-    }
-    
+    // uint16_t lenght = LENGHT(vector_rms_time);
+    // Serial.println(lenght);
+    // for (uint16_t index = 0; index < lenght; index++) {
+    //     rms_time_calc(index);
+    // }
+
     uint8_t rms_setpoint_index = 250;
+    
+    rms_time_calc(rms_setpoint_index);
     while (1) {
-        if (digitalRead(3) && rms_setpoint_index < 255) {
+        if (digitalRead(3) && rms_setpoint_index < max_index) {
             rms_setpoint_index++;
             rms_time_calc(rms_setpoint_index);
         }
-        if (digitalRead(4) && rms_setpoint_index > 0) {
+        if (digitalRead(4) && rms_setpoint_index > min_index) {
             rms_setpoint_index--;
             rms_time_calc(rms_setpoint_index);
         }
-        delay(1);
+        if (flag_print) {
+            Serial.print("Per: "), Serial.println(semi_periode);
+            flag_print = 0;
+        }
     }
-
 }
 
 

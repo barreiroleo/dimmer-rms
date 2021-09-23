@@ -17,7 +17,10 @@ void init_INT() {
 
 void ISR_INT() {
     // println_debug("Interrupt. Reset timer!: " + String(TCNT1));
+    uint16_t previous_ticks = TCNT1;
     TCNT1 = 0;
+    semi_periode = previous_ticks * peri_ticks;
+    flag_print = 1;
 }
 
 #endif

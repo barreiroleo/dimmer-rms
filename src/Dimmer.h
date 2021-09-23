@@ -67,7 +67,6 @@ const PROGMEM float vector_rms_time[256] = {
 };
 
 void rms_time_calc(uint8_t index) {
-    uint16_t semi_periode = 10E3;
     uint16_t time_us = semi_periode * pgm_read_float(vector_rms_time + index);
     Serial.print("index: "); Serial.print(index);
     Serial.print("; time us: "); Serial.print(time_us);
