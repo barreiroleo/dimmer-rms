@@ -77,7 +77,7 @@ void set_timer_1(uint16_t time_us) {
      * en osciloscopio. //TODO Probar en producto final
     **/
     if (time_us == 0) {
-        OCR1A = 30;
+        OCR1A = 10;
     }
     else {
         OCR1A = time_in_ticks;

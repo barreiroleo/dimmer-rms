@@ -23,9 +23,6 @@
 // HACK: Desactiva optimizaciones de código para debug en proteus.
 #pragma GCC optimize ("-O0")
 #pragma GCC push_options
-// El Sketch usa 6104 bytes (19%) del espacio de almacenamiento de programa. El máximo es 30720 bytes.
-// Las variables Globales usan 238 bytes (11%) de la memoria dinámica, dejando 1810 bytes para las variables locales. El máximo es 2048 bytes.
-// #define DebugSerial
 
 #include <Arduino.h>
 #include "src/DebugSerial.h"
@@ -46,17 +43,10 @@ void setup() {
 
 
 #define LENGHT(x) ((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
-#define max_index 254
-#define min_index 2
+#define max_index 255
+#define min_index 0
 void loop() {
-    // uint16_t lenght = LENGHT(vector_rms_time);
-    // Serial.println(lenght);
-    // for (uint16_t index = 0; index < lenght; index++) {
-    //     rms_time_calc(index);
-    // }
-
-    uint8_t rms_setpoint_index = 250;
-    
+    uint8_t rms_setpoint_index = 255;
     rms_time_calc(rms_setpoint_index);
     while (1) {
         if (digitalRead(3) && rms_setpoint_index < max_index) {
@@ -73,6 +63,5 @@ void loop() {
         }
     }
 }
-
 
 #pragma GCC pop_options

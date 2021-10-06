@@ -5,6 +5,7 @@ z_ignore/
 **/c_cpp_properties.json
 
 # Proteus
+**/Project Backups/**
 *.pdsprj.*
 *.pdsbak
 
